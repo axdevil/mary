@@ -1,0 +1,96 @@
+/* ICONOS */
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&display=swap');
+
+:root{
+    --primary: #b48ead;
+    --secondary: #7896b4;
+    --alert: #bf616a;
+    --warning: #ebcb8b;
+    --success: #a3be8c;
+    --light: #ebeef3;
+    --light2: #e4e8ef;
+    --light3: #d5dbe6;
+    --black: #2e3440;
+    --black2: #3b4252;
+    --black3: #434c5e;
+}
+*{
+    font-family: "Heebo",sans-serif;
+    color: var(--black);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+}
+
+/* TEXTFIELDS */
+.textLight{
+    position: relative;
+}
+.textLight input{
+    display: block;
+    border: 1px solid var(--black);
+    outline: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    padding: 8px;
+    background-color: inherit;
+    appearance: none;
+    font-size: 16px;
+    transition: outline-color 200ms ease;
+}
+.textLight label{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    background-color: var(--light);
+    transition: all 300ms ease;
+    pointer-events: none;
+}
+.textLight input:focus,
+.textLight input:valid{
+    outline-color: var(--black);
+}
+.textLight input:focus ~ label,
+.textLight input:valid ~ label{
+    top: -10px;
+    left: 12px;
+    font-size: 12px;
+    padding: 0 4px;
+}
+
+/* BOTONES */
+
+.btnPrimary,
+.btnSecondary,
+.btnAlert,
+.btnWarning,
+.btnSuccess{
+    border: 1px solid var(--black);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: var(--primary);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.btnPrimary:hover{
+    background-color: var(--black);
+    color: var(--light);
+}
+
+/* ENLACES */
+
+.aBlack{
+    color: var(--black);
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+.aBlack:hover{
+    color: var(--black3);
+    text-decoration: underline;
+}

@@ -1,0 +1,65 @@
+@import url('./global.css');
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--light);
+}
+div,form{
+    display: flex;
+}
+.box{
+    flex-direction: column;
+    border: 2px solid var(--black);
+    border-radius: 4px;
+    width: 26%;
+    background-color: var(--light);
+}
+.box > div{
+    background-color: var(--black);
+    padding: 8px;
+    text-align: center;
+    color: var(--light);
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+form{
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+form span{
+    font-size: 24px;
+    font-weight: 600;
+}
+form div input{
+    width: 100%;
+}
+form div:nth-child(2){
+    align-items: center;
+}
+form div:nth-child(2) a{
+    border: 1px solid var(--black);
+    outline: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    margin-left: 12px;
+    padding: 8px 12px;
+    transition: all 300ms ease;
+}
+form div:nth-child(2) a:hover{
+    outline-color: var(--black);
+}
+form div:nth-child(2) a i{
+    position: relative;
+    top: 2px;
+}
+form div:last-child{
+    align-items: center;
+    justify-content: space-between;
+}
+form div:last-child input{
+    width: 50%;
+}

@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var patientRouter = require('./routes/patient');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/patient', patientRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

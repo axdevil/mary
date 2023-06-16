@@ -35,7 +35,7 @@ form span{
     font-size: 24px;
     font-weight: 600;
 }
-form div input{
+form div input, form div select{
     width: 100%;
 }
 form div:nth-child(2){

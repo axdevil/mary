@@ -31,7 +31,8 @@ body{
 .textLight{
     position: relative;
 }
-.textLight input{
+.textLight input,
+.textLight select{
     display: block;
     border: 1px solid var(--black);
     outline: 1px solid rgba(0, 0, 0, 0);
@@ -51,11 +52,15 @@ body{
     pointer-events: none;
 }
 .textLight input:focus,
-.textLight input:valid{
+.textLight input:valid,
+.textLight select:focus,
+.textLight select:valid{
     outline-color: var(--black);
 }
 .textLight input:focus ~ label,
-.textLight input:valid ~ label{
+.textLight input:valid ~ label,
+.textLight select:focus ~ label,
+.textLight select:valid ~ label{
     top: -10px;
     left: 12px;
     font-size: 12px;

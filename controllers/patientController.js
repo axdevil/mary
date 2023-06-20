@@ -7,5 +7,8 @@ module.exports = {
     },
     signUp:function(req,res){
         res.render('patient/signUp')
+    },
+    validateSignUp:function(req,res){
+        res.redirect("/patient/signUp")
     }
 }

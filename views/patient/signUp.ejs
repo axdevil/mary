@@ -13,7 +13,7 @@
         <div>
             Registrarse
         </div>
-        <form action="">
+        <form action="/patient/validateSignUp" method="post">
             <div class="textLight" >
                 <input type="text" name="email" id="email" required>
                 <label for="email">Correo electronico</label>
@@ -25,10 +25,6 @@
             <div class="textLight" >
                 <input type="text" name="lastname" id="lastname" required>
                 <label for="lastname">Apellido(s)</label>
-            </div>
-            <div class="textLight" >
-                <input type="tel" name="phone" id="phone" required>
-                <label for="phone">Telefono</label>
             </div>
             <div class="textLight" >
                 <select name="gender" id="gender" required>

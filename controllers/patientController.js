@@ -9,6 +9,6 @@ module.exports = {
         res.render('patient/signUp')
     },
     validateSignUp:function(req,res){
-        res.redirect("/patient/signUp")
+        res.render('patient/validate',{name: req.body.name, lastname: req.body.lastname, email: req.body.email})
     }
 }

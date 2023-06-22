@@ -63,3 +63,11 @@ form div:last-child{
 form div:last-child input{
     width: 50%;
 }
+#errors{
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}

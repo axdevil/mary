@@ -28,13 +28,15 @@ body{
 }
 
 /* TEXTFIELDS */
-.textLight{
+.textBlack,
+.textAlert{
     position: relative;
 }
-.textLight input,
-.textLight select{
+.textBlack input,
+.textBlack select,
+.textAlert input,
+.textAlert select{
     display: block;
-    border: 1px solid var(--black);
     outline: 1px solid rgba(0, 0, 0, 0);
     border-radius: 4px;
     padding: 8px;
@@ -43,7 +45,8 @@ body{
     font-size: 16px;
     transition: outline-color 200ms ease;
 }
-.textLight label{
+.textBlack label,
+.textAlert label{
     position: absolute;
     top: 10px;
     left: 8px;
@@ -51,22 +54,42 @@ body{
     transition: all 300ms ease;
     pointer-events: none;
 }
-.textLight input:focus,
-.textLight input:valid,
-.textLight select:focus,
-.textLight select:valid{
-    outline-color: var(--black);
-}
-.textLight input:focus ~ label,
-.textLight input:valid ~ label,
-.textLight select:focus ~ label,
-.textLight select:valid ~ label{
+.textBlack input:focus ~ label,
+.textBlack input:valid ~ label,
+.textBlack select:focus ~ label,
+.textBlack select:valid ~ label,
+.textAlert input:focus ~ label,
+.textAlert input:valid ~ label,
+.textAlert select:focus ~ label,
+.textAlert select:valid ~ label{
     top: -10px;
     left: 12px;
     font-size: 12px;
     padding: 0 4px;
 }
-
+.textBlack input,
+.textBlack select{
+    border: 1px solid var(--black);
+}
+.textBlack input:focus,
+.textBlack input:valid,
+.textBlack select:focus,
+.textBlack select:valid{
+    outline-color: var(--black);
+}
+.textAlert input,
+.textAlert select{
+    border: 1px solid var(--alert);
+}
+.textAlert label{
+    color: var(--alert);
+}
+.textAlert input:focus,
+.textAlert input:valid,
+.textAlert select:focus,
+.textAlert select:valid{
+    outline-color: var(--alert);
+}
 /* BOTONES */
 
 .btnPrimary,
@@ -98,4 +121,12 @@ body{
 .aBlack:hover{
     color: var(--black3);
     text-decoration: underline;
+}
+
+/* NOTIFICACIONES */
+
+.notError{
+    background-color: var(--alert);
+    border-radius: 4px;
+    padding: 8px 16px;
 }

@@ -14,23 +14,38 @@
             Registrarse
         </div>
         <form action="/patient/validateSignUp" method="post">
+            <% if (backError.length == 0) { %>
+                <div class="textBlack">
+                    <input type="text" name="email" id="email" required>
+                    <label for="email">Correo electronico</label>
+                </div>    
+            <% } else { %>
+                <div class="textAlert">
+                    <input type="text" name="email" id="email" value="<%= body.email %>" required>
+                    <label for="email">Correo electronico</label>
+                </div>    
+            <% } %>
             <div class="textBlack" >
-                <input type="text" name="email" id="email" required>
-                <label for="email">Correo electronico</label>
-            </div>
-            <div class="textBlack" >
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" value="<%= body.name %>" required>
                 <label for="name">Nombre(s)</label>
             </div>
             <div class="textBlack" >
-                <input type="text" name="lastname" id="lastname" required>
+                <input type="text" name="lastname" id="lastname" value="<%= body.lastname %>" required>
                 <label for="lastname">Apellido(s)</label>
             </div>
             <div class="textBlack" >
                 <select name="gender" id="gender" required>
-                    <option value="" selected></option>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
+                    <% if (body.gender == "M") { %>
+                        <option value="M" selected>Masculino</option>
+                        <option value="F">Femenino</option>
+                    <% } else if(body.gender == "F"){ %>
+                        <option value="F" selected>Femenino</option>
+                        <option value="M">Masculino</option>
+                    <% } else { %>
+                        <option value="" selected></option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    <% } %>
                 </select>
                 <label for="gender">Genero</label>
             </div>
@@ -48,7 +63,11 @@
             </div>
         </form>
     </div>
-    <div id="errors"></div>
+    <div id="errors">
+        <% if (backError.length != 0) { %>
+            <span class="notError"><%= backError %></span>
+        <% } %>
+    </div>
     <script src="/javascripts/valForm.js"></script>
 </body>
 </html>

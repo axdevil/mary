@@ -3,7 +3,7 @@ const patientModel = require('../models/patientModel')
 
 module.exports = {
     index:function(req,res){
-        res.render('patient/login')
+        res.render('patient/login',{email: ""})
     },
     signUp:function(req,res){
         res.render('patient/signUp',{body: [],backError: ""})
@@ -17,7 +17,7 @@ module.exports = {
             }else{
                 patientModel.insert(con,body,function(err){
                     if(err) throw err
-                    res.send("Registrado con exito")
+                    res.render('patient/login',{email: body.email})
                 })
             }
         })

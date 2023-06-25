@@ -14,7 +14,7 @@
             Registrarse
         </div>
         <form action="/patient/validateSignUp" method="post">
-            <% if (backError.length == 0) { %>
+            <% if (!backError) { %>
                 <div class="textBlack">
                     <input type="text" name="email" id="email" required>
                     <label for="email">Correo electronico</label>
@@ -64,7 +64,7 @@
         </form>
     </div>
     <div id="errors">
-        <% if (backError.length != 0) { %>
+        <% if (backError) { %>
             <span class="notError"><%= backError %></span>
         <% } %>
     </div>

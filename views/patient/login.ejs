@@ -13,23 +13,39 @@
         <div>
             Iniciar sesión
         </div>
-        <form action="">
-            <div class="textBlack" >
-                <input type="text" name="email" id="email" value="<%= email %>" required>
-                <label for="email">Correo electronico</label>
-            </div>
-            <div class="textBlack" >
-                <input type="password" name="password" id="password" required>
-                <label for="password">Contraseña</label>
-                <a class="aBlack" title="¿Has olvidado la contraseña?" href=""><i class="fi fi-br-question"></i></a>
-            </div>
+        <form method="post" action="/patient/login">
+            <% if (!backError) { %>
+                <div class="textBlack" >
+                    <input type="text" name="email" id="email" value="<%= email %>" required>
+                    <label for="email">Correo electronico</label>
+                </div>
+                <div class="textBlack" >
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Contraseña</label>
+                    <a class="aBlack" title="¿Has olvidado la contraseña?" href=""><i class="fi fi-br-question"></i></a>
+                </div>
+            <% } else { %>
+                <div class="textAlert" >
+                    <input type="text" name="email" id="email" value="<%= email %>" required>
+                    <label for="email">Correo electronico</label>
+                </div>
+                <div class="textAlert" >
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Contraseña</label>
+                    <a class="aBlack" title="¿Has olvidado la contraseña?" href=""><i class="fi fi-br-question"></i></a>
+                </div>
+            <% } %>
             <div>
                 <a class="aBlack" href="/patient/signUp">Crear cuenta</a>
                 <input class="btnPrimary" type="submit" value="Entrar">
             </div>
         </form>
     </div>
-    <div id="errors"></divcl>
+    <div id="errors">
+        <% if (backError) { %>
+            <span class="notError"><%= backError %></span>
+        <% } %>
+    </div>
     <script src="/javascripts/valForm.js"></script>
 </body>
 </html>

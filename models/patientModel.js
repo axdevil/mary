@@ -4,5 +4,8 @@ module.exports = {
     },
     searchByEmail:function(con,email,fun){
         con.query('SELECT email FROM patient WHERE email=?',[email],fun)
+    },
+    searchByEmailAndPass:function(con,data,fun){
+        con.query('SELECT id FROM patient WHERE email=? AND password=?',[data.email,data.password],fun)
     }
 }

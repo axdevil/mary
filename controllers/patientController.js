@@ -3,10 +3,12 @@ const patientModel = require('../models/patientModel')
 
 module.exports = {
     index:function(req,res){
-        res.render('patient/login',{email: "", backError: ""})
+        req.session.user = null
+        res.render('patient/login',{email: null, backError: null})
     },
     signUp:function(req,res){
-        res.render('patient/signUp',{body: [],backError: ""})
+        req.session.user = null
+        res.render('patient/signUp',{body: [],backError: null})
     },
     validateSignUp:function(req,res){
         const body = req.body
@@ -17,7 +19,7 @@ module.exports = {
             }else{
                 patientModel.insert(con,body,function(err){
                     if(err) throw err
-                    res.render('patient/login',{email: body.email})
+                    res.render('patient/login',{email: body.email, backError: null})
                 })
             }
         })
@@ -27,7 +29,8 @@ module.exports = {
         patientModel.searchByEmailAndPass(con,body,function(err,data){
             if(err) throw err
             if(data.length == 1){
-                res.send('Inicio de sesion')
+                req.session.user = data[0].id
+                res.redirect('/')
             }else{
                 res.render('patient/login',{email: body.email,backError: "Contraseña o correo incorrecto"})
             }

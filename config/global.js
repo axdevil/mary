@@ -5,4 +5,8 @@ const dataDB = {
     database:'mary'
 }
 
-module.exports = dataDB
+function userIsLogged(req,funTrue,funFalse){
+    
+}
+
+module.exports = dataDB,userIsLogged

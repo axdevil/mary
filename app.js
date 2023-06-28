@@ -1,14 +1,40 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+const session = require('express-session')
+const MySQLStore = require('express-mysql-session')(session)
 var cookieParser = require('cookie-parser');
 var bodyParser = require("body-parser");
 var logger = require('morgan');
+
+const global = require('./config/global')
 
 var indexRouter = require('./routes/index');
 var patientRouter = require('./routes/patient');
 
 var app = express();
+
+// session
+const sessionStore = new MySQLStore({
+  host: global.host,
+  user: global.user,
+  password: global.password,
+  database: global.database,
+  checkExpirationInterval: 30 * 60 * 1000,
+  expiration: 24 * 60 * 60 * 1000
+})
+
+app.use(
+  session({
+    secret: 'STANlee31',
+    resave: false,
+    saveUninitialized: false,
+    store: sessionStore,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+    }
+  })
+)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,10 +1,11 @@
 const mysql = require("mysql")
+const global = require('../config/global')
 
 const con = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'mary'
+    host: global.host,
+    user: global.user,
+    password: global.password,
+    database: global.database
 })
 
 con.connect(

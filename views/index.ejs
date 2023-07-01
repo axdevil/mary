@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <div class="div">
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </div>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="/stylesheets/index.css">
+	<link rel="stylesheet" href="/stylesheets/partials/nav.css">
+
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<%- include('./partials/nav.ejs',{activeBtn: 1}) %>
+		<div>
+			<h1>Home</h1>
+		</div>
+	</div>
+</body>
 </html>

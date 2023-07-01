@@ -1,0 +1,43 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--black);
+}
+.nav .routes{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.nav a{
+    display: block;
+    font-size: 22px;
+    text-decoration: none;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    transition: background-color 200ms ease;
+}
+.nav a:hover{
+    background-color: var(--light);
+}
+.nav a:hover i{
+    color: var(--black);
+}
+.nav a i{
+    position: relative;
+    color: var(--light);
+    top: 4px;
+    transition: color 400ms ease;
+}
+.nav .active{
+    background-color: var(--primary);
+}
+.nav .active i{
+    color: var(--black);
+}

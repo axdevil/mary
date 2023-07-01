@@ -15,6 +15,7 @@ div,form{
     border: 2px solid var(--black);
     border-radius: 4px;
     width: 26%;
+    max-width: 360px;
     background-color: var(--light);
 }
 .box > div{
@@ -70,4 +71,35 @@ form div:last-child input{
     position: fixed;
     bottom: 16px;
     right: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    .box{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 860px) {
+    .box{
+        width: 38%;
+    }
+}
+@media screen and (max-width: 660px) {
+    .box{
+        width: 44%;
+    }
+}
+@media screen and (max-width: 540px) {
+    .box{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 430px) {
+    .box{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 260px) {
+    .box{
+        width: 96%;
+    }
 }

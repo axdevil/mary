@@ -11,6 +11,7 @@ const global = require('./config/global')
 
 var indexRouter = require('./routes/index');
 var patientRouter = require('./routes/patient');
+const meetingRouter = require('./routes/meeting')
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/patient', patientRouter);
+app.use('/meeting', meetingRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

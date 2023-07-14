@@ -6,10 +6,11 @@
 
 :root{
     --primary: #b48ead;
-    --secondary: #7896b4;
+    --secondary: #81a1c1;
     --alert: #bf616a;
     --warning: #ebcb8b;
     --success: #a3be8c;
+    --global: #8fbcbb;
     --light: #ebeef3;
     --light2: #e4e8ef;
     --light3: #d5dbe6;
@@ -34,6 +35,7 @@ body{
 }
 .textBlack input,
 .textBlack select,
+.textBlack textarea,
 .textAlert input,
 .textAlert select{
     display: block;
@@ -44,6 +46,7 @@ body{
     appearance: none;
     font-size: 16px;
     transition: outline-color 200ms ease;
+    resize: none;
 }
 .textBlack label,
 .textAlert label{
@@ -58,6 +61,8 @@ body{
 .textBlack input:valid ~ label,
 .textBlack select:focus ~ label,
 .textBlack select:valid ~ label,
+.textBlack textarea:focus ~ label,
+.textBlack textarea:valid ~ label,
 .textAlert input:focus ~ label,
 .textAlert input:valid ~ label,
 .textAlert select:focus ~ label,
@@ -68,17 +73,21 @@ body{
     padding: 0 4px;
 }
 .textBlack input,
-.textBlack select{
+.textBlack select,
+.textBlack textarea{
     border: 1px solid var(--black);
 }
 .textBlack input:focus,
 .textBlack input:valid,
 .textBlack select:focus,
-.textBlack select:valid{
+.textBlack select:valid,
+.textBlack textarea:focus,
+.textBlack textarea:valid{
     outline-color: var(--black);
 }
 .textAlert input,
-.textAlert select{
+.textAlert select,
+.textAlert textarea{
     border: 1px solid var(--alert);
 }
 .textAlert label{
@@ -87,7 +96,9 @@ body{
 .textAlert input:focus,
 .textAlert input:valid,
 .textAlert select:focus,
-.textAlert select:valid{
+.textAlert select:valid,
+.textAlert textarea:focus,
+.textAlert textarea:valid{
     outline-color: var(--alert);
 }
 /* BOTONES */
@@ -97,19 +108,29 @@ body{
 .btnAlert,
 .btnWarning,
 .btnSuccess{
-    border: 1px solid var(--black);
+    border: none;
     text-decoration: none;
     font-size: 16px;
     padding: 8px 16px;
-    background-color: var(--primary);
     border-radius: 4px;
     cursor: pointer;
     transition: all 300ms ease;
 }
-.btnPrimary:hover{
-    background-color: var(--black);
-    color: var(--light);
+.btnPrimary{
+    background-color: var(--primary);
 }
+.btnSecondary{
+    background-color: var(--secondary);
+}
+.btnAlert{
+    background-color: var(--alert);
+}
+.btnPrimary:hover,
+.btnAlert:hover,
+.btnSecondary:hover{
+    background-color: var(--global);
+}
+
 
 /* ENLACES */
 

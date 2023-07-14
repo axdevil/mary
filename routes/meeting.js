@@ -3,6 +3,6 @@ const router = express.Router()
 
 const controller = require('../controllers/meetingController')
 
-router.get('/', controller.index)
+router.post('/new', controller.new)
 
 module.exports = router
